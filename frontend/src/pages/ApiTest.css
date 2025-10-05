@@ -1,0 +1,276 @@
+.api-test-page {
+  padding: 2rem 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.test-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.test-header h1 {
+  color: #333;
+  margin: 0;
+}
+
+.btn-run-tests {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.btn-run-tests:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn-run-tests:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 测试数据集 */
+.test-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.test-info h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.test-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.data-card {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.data-card h4 {
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.data-card pre {
+  background: #fff;
+  padding: 0.75rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* 测试结果 */
+.test-results {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.test-results h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.no-results {
+  text-align: center;
+  color: #6c757d;
+  padding: 2rem;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result-card {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 1rem;
+  transition: all 0.3s;
+  border-left: 4px solid #6c757d;
+}
+
+.result-card.success {
+  border-left-color: #28a745;
+  background: #d4edda;
+}
+
+.result-card.failed {
+  border-left-color: #dc3545;
+  background: #f8d7da;
+}
+
+.result-card.pending {
+  border-left-color: #ffc107;
+  background: #fff3cd;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.status-icon {
+  font-size: 1.5rem;
+}
+
+.test-name {
+  flex: 1;
+  font-weight: 600;
+  color: #333;
+}
+
+.method-badge {
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.result-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.detail-row.error {
+  color: #dc3545;
+}
+
+.detail-row .label {
+  font-weight: 600;
+  min-width: 80px;
+}
+
+.detail-row code {
+  background: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+.status-code {
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.status-code.success {
+  background: #28a745;
+  color: white;
+}
+
+.status-code.failed {
+  background: #dc3545;
+  color: white;
+}
+
+.response-details {
+  margin-top: 0.5rem;
+}
+
+.response-details summary {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: 600;
+  user-select: none;
+}
+
+.response-details summary:hover {
+  text-decoration: underline;
+}
+
+.response-details pre {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  border: 1px solid #dee2e6;
+}
+
+/* 测试摘要 */
+.test-summary {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.test-summary h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.stat-card.success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.stat-card.failed {
+  background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
