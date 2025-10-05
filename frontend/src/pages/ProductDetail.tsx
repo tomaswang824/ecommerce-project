@@ -29,9 +29,10 @@ const ProductDetail = () => {
   const fetchProduct = async () => {
     try {
       const response = await axios.get(`/api/products/${id}`)
-      setProduct(response.data)
+      setProduct(response.data || null)
     } catch (error) {
       console.error('获取商品详情失败:', error)
+      setProduct(null)
     } finally {
       setLoading(false)
     }

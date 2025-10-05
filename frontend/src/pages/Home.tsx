@@ -24,9 +24,10 @@ const Home = () => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get('/api/products?limit=6')
-      setProducts(response.data)
+      setProducts(Array.isArray(response.data) ? response.data : [])
     } catch (error) {
       console.error('获取商品失败:', error)
+      setProducts([])
     } finally {
       setLoading(false)
     }
